@@ -3,8 +3,8 @@ import { SiReact, SiMaterialui, SiNodedotjs,SiMongodb,SiExpress } from "react-ic
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="p-4 bg-white justify-between flex shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
-    <p className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {year} Stocker.io
+    <footer className='mx-auto bg-gradient-to-r to-cyan-500 from-blue-500 p-5 flex justify-between content-center'>
+    <p className="text-sm text-sky-100 sm:text-center">© {year} Stocker.io
     </p>
     <div className="flex">
         <p className="flex text-2xl text-sky-100 gap-5">

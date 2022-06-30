@@ -1,20 +1,17 @@
-import React, { useState } from 'react'
-import { USIndex } from '../../data/data';
+import React from "react";
+
 const IndexCard = (props) => {
   return (
     <div>
-        {USIndex.map((index, i) => {
-          return (
-            <div className="grid grid-cols-3 gap-4">
-            <div className='text-left'>{index.name}</div>
-            <div className='text-left'>{index.now}</div>
-            <div>1.43%</div>
-            
-            </div>
-          );
-        })}
+      return (
+      <div className="grid grid-cols-3 gap-6 text-sm">
+        <div className="text-left pt-2">{props.name}</div>
+        <div className="text-left pt-2">{props.price}</div>
+        <div className="pt-2">{props.perc}</div>
+      </div>
+      );
     </div>
-  )
-}
+  );
+};
 
-export default IndexCard
+export default IndexCard;

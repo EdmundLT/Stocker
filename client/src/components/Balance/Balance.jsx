@@ -12,13 +12,14 @@ const Balance = () => {
     let latset = balance.amount;
     SetBalance(latset);
   }
+  setInterval(UpdateBalance, 5000);
   return (
-    <div className=" bg-slate-200 rounded-lg p-4 h-56">
-      <p className="text-3xl font-Yanone pb-2">Your Assets</p>
+    <div className=" bg-slate-200 rounded-lg p-4 h-56 shadow-xl hover:bg-slate-300">
+      <p className="text-3xl font-Yanone pb-2 text-center">Your Assets</p>
       <p className="text-2xl font-Yanone text-left pb-2">
         Account Balance:
          $ {millify(cBalance, {
-          precision: 4,
+          precision: 3,
           decimalSeparator: ",",
           lowercase: true,
           space: true,
