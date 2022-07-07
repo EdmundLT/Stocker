@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import moment from "moment";
@@ -12,17 +10,17 @@ const NavBar = () => {
     SetTime(time);
   }
   setInterval(UpdateTime, 100);
-
-  return <div className='bg-gradient-to-r from-cyan-500 to-blue-500 p-2 flex justify-between content-center'>
+//bg-gradient-to-r from-cyan-500 to-blue-500
+  return <div className=' p-2 flex justify-between content-center bg-white bg-opacity-40 backdrop-blur-lg drop-shadow-lg rounded-md'>
   <div className="pl-2 pt-1">
   <a href="/">
-  <p className="text-4xl font-Yanone text-white font-bold">Stocker</p>
+  <p className="text-4xl font-Yanone text-[#17252A] font-bold">Stocker</p>
   </a>
   </div>
   <div className="pt-2 pl-4">
-  <p className="text-xl font-Yanone font-semibold text-white">{ctime}</p>
+  <p className="text-xl md:text-2xl lg:text-2xl font-Yanone font-semibold text-[#17252A]">{ctime}</p>
   </div>
-  <div className="pt-2 pr-4 grid grid-cols-2 gap-4">
+  <div className="pt-2 pr-4 grid grid-cols-2 gap-4 text-[#17252A]">
     <PersonIcon />
     <MenuIcon />
   </div>  

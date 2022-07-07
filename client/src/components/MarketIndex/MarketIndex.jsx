@@ -1,29 +1,48 @@
-import React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import IndexCard from "./IndexCard";
-import moment from "moment";
-import { httpGetMarketIndex, httpGetStockPrice } from "../../hooks/requests";
-
-const UISymbolList = ["^GSPC", "^DJI", "^IXIC"];
-
+import { USSymbol } from "../../data/data";
+const axios = require("axios").default;
 const MarketIndex = () => {
-const DJIndex = httpGetMarketIndex(UISymbolList[0])
+  const [IndexList, setIndexList] = useState([]);
+  async function getMarketIndex() {
+    let temp = [];
+    for (var i = 0; i < USSymbol.length; i++) {
+      await axios
+        .get(`http://localhost:8000/stocks/${USSymbol[i]}`)
+        .then(function (response) {
+          const data = response.data;
+          temp.push(data);
+          return data;
+        })
+        .catch(function (error) {
+          console.log(error);
+          return error;
+        });
+    }
+    setIndexList(temp);
+  }
+
+  useEffect(() => {
+    getMarketIndex();
+    const interval = setInterval(() => {
+      getMarketIndex();
+    }, 120000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className=" bg-slate-200 rounded-lg p-4 justify-center text-center h-56 shadow-xl hover:bg-slate-300">
-      <p className="text-3xl font-Yanone pb-2">Market Index</p>
-      <div className="p-2">
-        <IndexCard 
-          name={DJIndex.symbol}
-          price={DJIndex.price}
-          perc="1.43%"
-        />
-        <div className="pt-9 justify-between">
-          <p className="text-left text-sm text-gray-500">
-            Last Update: {moment().format("MM-DD-YYYY")}
-          </p>
-        </div>
-      </div>
+    <div className=" rounded-lg p-4 justify-center text-center h-56 shadow-xl  hover:bg-[#2B7A78] bg-[#DEF2F1]">
+      <p className="text-2xl font-Roboto pb-2 font-normal">US Market Index</p>
+      {IndexList.map((index) => {
+        return (
+          <IndexCard
+            name={index.name}
+            price={index.price}
+            perc={index.percentage}
+            symbol={index.symbol}
+          />
+        );
+      })}
     </div>
   );
 };

@@ -4,7 +4,12 @@ module.exports = {
     extend: {
       fontFamily: {
         'Yanone': ['Yanone Kaffeesatz', 'sans-serif'],
-        'Rajdhani': ['Rajdhani', 'sans-serif']
+        'Rajdhani': ['Rajdhani', 'sans-serif'],
+        'Roboto': ['Roboto', 'sans-serif']
+      },
+      colors: {
+        'eggshell-white': '#EAE7DC',
+        'dark-vanilla': '#D8C3A5'
       }
     },
   },

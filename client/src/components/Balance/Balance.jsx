@@ -14,18 +14,18 @@ const Balance = () => {
   }
   setInterval(UpdateBalance, 5000);
   return (
-    <div className=" bg-slate-200 rounded-lg p-4 h-56 shadow-xl hover:bg-slate-300">
-      <p className="text-3xl font-Yanone pb-2 text-center">Your Assets</p>
-      <p className="text-2xl font-Yanone text-left pb-2">
+    <div className="  rounded-lg p-4 h-56 shadow-xl hover:bg-[#2B7A78] bg-[#DEF2F1]">
+      <p className="text-2xl font-Roboto font-normal pb-2 text-center">Your Assets</p>
+      <p className="text-xl font-Roboto text-left pb-2">
         Account Balance:
          $ {millify(cBalance, {
           precision: 3,
           decimalSeparator: ",",
           lowercase: true,
           space: true,
-        })} {" - "} <span className="text-lg">{currency}</span>
+        })} {" - "} <span className="text-base">{currency}</span>
       </p>
-      <p className="text-2xl font-Yanone text-left">
+      <p className="text-xl font-Roboto text-left">
         Percentage Change: {percentageDiff}%
       </p>
       <div className="flex pt-12 justify-between">

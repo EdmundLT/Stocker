@@ -18,6 +18,8 @@ function httpGetStockPriceBySymbol(req, res) {
       return res.status(200).json({
         symbol: symbol,
         status: "success",
+        name:quote.price.shortName,
+        prevClose: quote.price.regularMarketPreviousClose,
         price: quote.price.regularMarketPrice,
         percentage: quote.price.regularMarketChangePercent * 100,
       });
@@ -43,7 +45,16 @@ function httpGetMiFrmDb (req, res) {
     })
   })
 }
+
+async function httpGetapi (req,res){
+  console.log("Getting all data..");
+  Stock.find({}, function (err, result) {
+    if (err) return handleError(error);
+    res.json(result)
+  })
+}
 module.exports = {
   httpGetStockPriceBySymbol,
-  httpGetMiFrmDb
+  httpGetMiFrmDb,
+  httpGetapi
 };
