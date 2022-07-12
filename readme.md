@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # Stocker.io
 
-This is a full stack web application to monitor stock price, news, percentage change..etc.
+## This is a full stack web application to monitor stock price, news, percentage change..etc.
 
 Tools:
 1. MongoDB
