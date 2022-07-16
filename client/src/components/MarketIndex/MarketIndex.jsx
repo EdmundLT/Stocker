@@ -8,7 +8,7 @@ const MarketIndex = () => {
     let temp = [];
     for (var i = 0; i < USSymbol.length; i++) {
       await axios
-        .get(`http://localhost:8000/stocks/${USSymbol[i]}`)
+        .get(`stocks/${USSymbol[i]}`)
         .then(function (response) {
           const data = response.data;
           temp.push(data);

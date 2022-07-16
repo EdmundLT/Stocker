@@ -10,7 +10,7 @@ const Trade = () => {
     let temp = [];
     for (var i = 0; i < wls.length; i++) {
       await axios
-        .get(`http://localhost:8000/stocks/${wls[i]}`)
+        .get(`stocks/${wls[i]}`)
         .then(function (response) {
           const data = response.data;
           temp.push(data)

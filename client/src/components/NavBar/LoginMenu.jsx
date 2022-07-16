@@ -35,10 +35,9 @@ const LoginMenu = () => {
         }}
       >
         <MenuItem onClick={handleClose}>
-          <GoogleIcon /><a href="/auth/google">
+          <GoogleIcon /><a href="/auth/google" className="disabled">
           &nbsp;&nbsp;Login with Google</a>
         </MenuItem>
-        <MenuItem onClick={handleClose}>Edit watchlist</MenuItem>
       </Menu>
     </div>
   );

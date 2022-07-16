@@ -6,4 +6,5 @@ const api = express.Router();
 api.use("/stocks", stocksRouter);
 api.use("/news", newsRouter);
 api.use('/user', usersRouter)
+
 module.exports = api;

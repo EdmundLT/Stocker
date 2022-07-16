@@ -35,19 +35,8 @@ async function SaveToDatabase(news) {
 }
 
 async function loadNews() {
+  await News.deleteMany({})
   await NewsQuoteAPI();
-  // const UISymbolList = ["^GSPC", "^DJI", "^IXIC"];
-  // UISymbolList.forEach(async (uisymbol) => {
-  //   const findExistData = await findMarketIndex({
-  //     symbol: uisymbol,
-  //   });
-  //   if (findExistData) {
-  //     console.log(`Market Index Data - ${uisymbol} already initialized`);
-  //   } else {
-  //     console.log(`Getting ${uisymbol} Data...`);
-  //     await DailyGetMarketIndex(uisymbol);
-  //   }
-  // });
 }
 
 async function findOneNews(filter) {

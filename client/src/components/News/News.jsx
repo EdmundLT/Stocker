@@ -11,7 +11,7 @@ const News = () => {
   }
   async function getNews() {
     await axios
-      .get("http://localhost:8000/news/db/demo")
+      .get("news/db/demo")
       .then(function (response) {
         const data = response.data.result;
         Top3(data);

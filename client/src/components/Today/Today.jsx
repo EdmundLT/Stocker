@@ -9,7 +9,7 @@ const Today = () => {
     let temp = [];
     for (var i = 0; i < GMI.length; i++) {
       await axios
-        .get(`http://localhost:8000/stocks/${GMI[i]}`)
+        .get(`stocks/${GMI[i]}`)
         .then(function (response) {
           const data = response.data;
           temp.push(data);

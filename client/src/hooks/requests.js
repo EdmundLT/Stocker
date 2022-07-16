@@ -1,8 +1,7 @@
-const API_URL = "http://localhost:8000";
 const axios = require('axios').default;
 
 async function httpGetIndex() {
-    axios.get('http://localhost:8000/stocks/^GSPC')
+    axios.get('stocks/^GSPC')
   .then(function (response) {
     console.log(response.data);
     console.log(response.status);
@@ -19,7 +18,7 @@ async function httpGetIndex() {
 }
 
 function loadNewsDB(){
-  axios.get('http://localhost:8000/news/db/demo')
+  axios.get('news/db/demo')
   .then(function (response) {
     console.log(response.result[0])
   })
